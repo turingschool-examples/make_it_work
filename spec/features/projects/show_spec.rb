@@ -12,7 +12,7 @@ RSpec.describe 'Projects show page' do
     expect(page).to have_content("Challenge Theme: Apartment Furnishings")
   end
 
-  it 'shows a count of number of contestants on the project' do
+  it 'shows a count of number of contestants on the project and average experience' do
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
     upholstery_tux = furniture_challenge.projects.create(name: "Upholstery Tuxedo", material: "Couch")
 
@@ -25,5 +25,6 @@ RSpec.describe 'Projects show page' do
     visit "/projects/#{upholstery_tux.id}"
 
     expect(page).to have_content("Total Number of Contestants Participating: 2")
+    expect(page).to have_content("Average Contestant Experience: 10 years")
   end
 end
