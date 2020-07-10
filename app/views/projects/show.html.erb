@@ -8,3 +8,15 @@
 
   <% cp_list = ContestantProject.all.select {|cp| cp.project_id == @project.id}%>
   <%= cp_list.count %></p>
+
+
+
+  <% contestants = cp_list.map do |cp| %>
+   <%  Contestant.where(id: cp.contestant_id) %>
+  <% end %>
+
+  <% exp = contestants.map do |contestant| %>
+    <% contestant.years_of_experience %>
+  <% end %>
+
+  <p>List of Contestants: <%= exp.sum / exp.count %></p>
