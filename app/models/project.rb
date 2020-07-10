@@ -11,4 +11,8 @@ class Project <ApplicationRecord
     end.to_f
     total_experience / contestants.count.to_f
   end
+
+  def add_contestant(contestant_id)
+    contestants << Contestant.find(contestant_id)
+  end
 end
