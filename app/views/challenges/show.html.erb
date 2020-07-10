@@ -1,0 +1,7 @@
+<%  @challenges.each do |challenge| %>
+  <p> Theme: <%= challenge.theme %> </p>
+    <% challenge.projects.each do |project| %>
+      <h3> Name: <%= project.name %></h3>
+      <p> Material: <%= project.material %> </p>
+    <% end %>
+<% end %>

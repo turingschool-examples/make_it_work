@@ -9,7 +9,7 @@ RSpec.describe "as a visitor", type: :feature do
 
       visit "/projects/#{project_1.id}"
 
-      expect(page).to have_content("Theme: #{recycled_material_challenge.name}")
+      expect(page).to have_content("Theme: #{recycled_material_challenge.theme}")
       expect(page).to have_content("Name: #{project_1.name}")
       expect(page).to have_content("Material: #{project_1.material}")
     end
