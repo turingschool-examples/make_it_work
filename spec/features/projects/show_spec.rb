@@ -43,20 +43,8 @@ RSpec.describe "Projects show page" do
 
       visit "/projects/#{@recycled_material.id}"
 
-      
+      expect(@recycled_material.average_years_of_experience).to eq(6.67)
+      expect(page).to have_content("Average Contestant Experience: 6.67 years")
     end
   end
 end
-
-```
-User Story Extension 1 - Average years of experience for contestants by project
-​
-As a visitor,
-When I visit a project's show page
-I see the average years of experience for the contestants that worked on that project
-(e.g.    Litfit
-    Material: Lamp Shade
-  Challenge Theme: Apartment Furnishings
-  Number of Contestants: 3
-  Average Contestant Experience: 10.25 years)
-```
