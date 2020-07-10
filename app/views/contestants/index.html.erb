@@ -1,0 +1,15 @@
+<h1>Contestants</h1>
+
+<% @contestants.each do |contestant| %>
+  <p><%= contestant.name %><p>
+  <% project_array = @contestant_projects.select do |contestant_project| %>
+    <%  contestant_project.contestant_id == contestant.id %>
+  <% end %>
+  <% project_string = '' %>
+  <% project_array.each do |project| %>
+    <% project_name = @projects.find(project.project.id) %>
+    <% project_string << project_name.name + ", " %>
+  <% end %>
+  <% project_string.delete_suffix!(", ") %>
+  <%= "Projects: #{project_string}" %>
+<% end %>
