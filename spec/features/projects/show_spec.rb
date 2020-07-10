@@ -14,5 +14,12 @@ RSpec.describe 'as a visitor' do
       expect(page).to have_content('Newspaper')
       expect(page).to have_content('Recycled Material')
     end
+
+    it 'I see a count of the number of contestants on this project' do
+
+      visit "/projects/#{@news_chic.id}"
+
+      expect(page).to_have_content("Number of Contestants: #{@news_chic.contestants.count}")
+    end
   end
 end
