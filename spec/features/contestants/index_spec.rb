@@ -29,8 +29,6 @@ RSpec.describe 'Contestant index page' do
     expect(page).to have_content("#{kentaro.name}")
     expect(page).to have_content("Projects: Boardfit Upholstery Tuxedo")
     
-
   end
-  
   
 end
