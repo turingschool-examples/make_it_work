@@ -25,8 +25,8 @@ RSpec.describe "Projects show page" do
 
     visit "/projects/#{@recycled_material.id}"
 
-    expect(page).to have_content("Challenge: #{@challenge1.name}")
-    expect(page).to have_content("Theme: #{@recycled_material.theme}")
+    expect(page).to have_content("#{@recycled_material.name}")
+    expect(page).to have_content("Theme: #{@challenge1.theme}")
     expect(page).to have_content("Material: #{@recycled_material.material}")
   end
 
