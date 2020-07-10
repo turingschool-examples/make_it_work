@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Project's show page", type: :feature do
+RSpec.describe "Project's show page" do
   before :each do
     @furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
     @lit_fit = @furniture_challenge.projects.create(name: "Litfit", material: "Lamp")
