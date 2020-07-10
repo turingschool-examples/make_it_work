@@ -9,6 +9,17 @@ class ProjectsController < ApplicationController
       Contestant.find(contestant.contestant_id)
     end
     total = contestants.inject(0) {|sum, contestant| sum + contestant.years_of_experience }
-    @average_years = total / @num_contestants
+    if @num_contestants == 0
+      @average_years = 0
+    else
+      @average_years = total / @num_contestants
+    end
+  end
+
+  def update
+    project = Project.find(params[:id])
+    contestant = Contestant.find(params[:contestant_id])
+    ContestantProject.create(contestant_id: contestant.id, project_id: project.id)
+    redirect_to "/projects/#{project.id}"
   end
 end

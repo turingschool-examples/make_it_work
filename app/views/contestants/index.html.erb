@@ -1,5 +1,4 @@
 <h1>Contestants</h1>
-
 <% @contestants.each do |contestant| %>
   <p><b><%= contestant.name %></b><p>
   <% project_array = @contestant_projects.select do |contestant_project| %>
