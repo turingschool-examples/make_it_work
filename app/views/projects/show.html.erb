@@ -1,3 +1,5 @@
 <h1>Name: <%=@project.name%></h1>
   <p>Material: <%= @project.material %></p>
   <p>Theme: <%= @project.challenge.theme %></p>
+  <p>Project Contestants: <%= @project.contestants.count %></p>
+  <p>Average Contestant Experience: <%= @project.average_experience %></p>
