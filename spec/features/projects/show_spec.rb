@@ -12,12 +12,11 @@ RSpec.describe 'projects show page' do
     @lit_fit = @furniture_challenge.projects.create(name: "Litfit", material: "Lamp")
   end
 
-  it 'can display name, material, and challenge theme' do
+  it 'can display name, material, and challenge theme for a particular project' do
     visit "/projects/#{@news_chic.id}"
 
     expect(page).to have_content(@news_chic.name)
     expect(page).to have_content("Material: #{@news_chic.material}")
     expect(page).to have_content("Challenge Theme: #{@recycled_material_challenge.theme}")
   end
-
 end
