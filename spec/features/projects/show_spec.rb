@@ -35,30 +35,29 @@ RSpec.describe 'as a visitor' do
       expect(page).to have_content("Average Contestant Experience: 12.5")
     end
 
-    describe 'I see a form to add a contestant to this project' do
-      it 'When I fill out a field with an existing contestants id and hit "Add Contestant To Project" I\'m taken back to the project\'s show page and I see that the number of contestants has increased by 1' do
+    it 'I see a form to add a contestant to this project;
+    
+    When I fill out a field with an existing contestants id and hit "Add Contestant To Project", I\'m taken back to the project\'s show page and I see that the number of contestants has increased by 1;
 
-        visit "/projects/#{@news_chic.id}"
-        expect(page).to have_content("Number of Contestants: 2")
+    And when I visit the contestants index page, I see that project listed under that contestant\'s name' do
 
-        fill_in('name', with: 'Gaby Mendez')
-        fill_in('age', with: '30')
-        fill_in('hometown', with: 'Santo Domingo')
-        fill_in('years of experience', with: '1')
+      visit "/projects/#{@news_chic.id}"
+      expect(page).to have_content("Number of Contestants: 2")
 
-        click_on 'Add Contestant'
+      fill_in(:name, with: 'Gaby Mendez')
+      fill_in(:age, with: 30)
+      fill_in(:hometown, with: 'Santo Domingo')
+      fill_in(:years_of_experience, with: 1)
 
-        expect(current_path).to eq("/projects/#{@news_chic.id}")
-        expect(page).to have_content("Number of Contestants: 3")
-      end
+      click_on 'Add Contestant'
 
-      it 'And when I visit the contestants index page, I see that project listed under that contestant\'s name' do
+      expect(current_path).to eq("/projects/#{@news_chic.id}")
+      expect(page).to have_content("Number of Contestants: 3")
 
-        visit "/contestants"
+      visit "/contestants"
 
-        within('#gaby-mendez') do
-          expect(page).to have_content('News Chic')
-        end
+      within('#gaby-mendez') do
+        expect(page).to have_content('News Chic')
       end
     end
   end

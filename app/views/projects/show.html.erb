@@ -3,3 +3,12 @@
 <p>Challenge Theme: <%= @challenge.theme %></p>
 <p>Number of Contestants: <%= @project.contestants.count %></p>
 <p>Average Contestant Experience: <%= @project.avg_experience %> </p>
+
+<h3>Add New Contestant</h3>
+<%= form_tag "/projects/#{@project.id}/contestants", class: 'new-contestant-form' do %>
+  <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
+  <%= text_field_tag :age, nil, placeholder: 'Age' %><br>
+  <%= text_field_tag :hometown, nil, placeholder: 'Hometown' %><br>
+  <%= text_field_tag :years_of_experience, nil, placeholder: 'Years of Experience' %><br>
+  <%= submit_tag 'Add Contestant' %>
+<% end %>
