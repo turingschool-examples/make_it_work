@@ -7,7 +7,6 @@ RSpec.describe "Contestants index page" do
     @contestant_2 = Contestant.create(name: "Justin", age: 27, hometown: "Denver", years_of_experience: 20)
 
     @litfit = @contestant_1.projects.create!(name: "Litfit", material: "Lamp Shade", challenge: @challenge)
-    @litfit = @contestant_2.projects.create!(name: "Litfit", material: "Lamp Shade", challenge: @challenge)
     @rug = @contestant_1.projects.create!(name: "Rug Tuxedo", material: "Rugs", challenge: @challenge)
     @leather = @contestant_2.projects.create!(name: "LeatherFeather", material: "Leather", challenge: @challenge)
 	end
