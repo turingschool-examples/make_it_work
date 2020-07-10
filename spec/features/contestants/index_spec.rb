@@ -22,8 +22,7 @@ RSpec.describe 'Contestant index page' do
     ContestantProject.create(contestant_id: kentaro.id, project_id: boardfit.id)
 
     visit "/contestants"
-    
-  
+
     expect(current_path).to eq("/contestants")
     expect(page).to have_content("#{gretchen.name}")
     expect(page).to have_content("Projects: News Chic Upholstery Tuxedo")
