@@ -40,6 +40,11 @@ RSpec.describe Project, type: :model do
       expect(boardfit.total_contestants).to eq(2)
       expect(upholstery_tux.total_contestants).to eq(2)
       expect(lit_fit.total_contestants).to eq(0)
+
+      expect(news_chic.average_years_of_experience).to eq(12.5)
+      expect(boardfit.average_years_of_experience).to eq(11.5)
+      expect(upholstery_tux.average_years_of_experience).to eq(10)
+      expect(lit_fit.average_years_of_experience).to eq(0)
     end
   end
 end
