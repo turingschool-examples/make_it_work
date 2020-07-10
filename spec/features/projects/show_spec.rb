@@ -21,4 +21,10 @@ RSpec.describe "When I visit a project show page" do
     expect(page).to have_content("Couch")
     expect(page).to have_content("Apartment Furnishings")
   end
+
+  it "shows a count of all contestants" do
+    visit "/projects/#{@upholstery_tux.id}"
+
+    expect(page).to have_content("Contestants on this Project :2")
+  end
 end
