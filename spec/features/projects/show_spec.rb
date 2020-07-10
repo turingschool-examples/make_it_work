@@ -17,13 +17,14 @@ RSpec.describe "Project Show Page Spec" do
 
   describe "As a visitor" do
     describe "When I visit a project's show page" do
-      it "I see that project's name, material, theme, and contestant count" do
+      it "I see that project's details" do
         visit "/projects/#{@lit_fit.id}"
 
         expect(page).to have_content("Litfit")
         expect(page).to have_content("Material: Lamp Shade")
         expect(page).to have_content("Challenge Theme: Apartment Furnishings")
         expect(page).to have_content("Number of Contestants: 3")
+        expect(page).to have_content("Average Contestant Experience: 11.66 years")
       end
     end
   end
