@@ -1,3 +1,4 @@
-<%= @project_name %>
-<%= "Material: #{@project_material}" %>
-<%= "Challenge Theme: #{@project_theme}" %>
+<%= @project.name %>
+<%= "Material: #{@project.material}" %>
+<%= "Challenge Theme: #{@project.challenge.theme}" %>
+<%= "Number of Contestants: #{@project.contestants.size}" %>
