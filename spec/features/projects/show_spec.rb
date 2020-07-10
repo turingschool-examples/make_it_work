@@ -32,13 +32,13 @@ RSpec.describe "projects show page" do
     expect(page).to have_content(news_chic.name)
     expect(page).to have_content(news_chic.material)
     expect(page).to have_content(recycled_material_challenge.theme)
-    expect(page).to have_content("Number of Contestants: 2")
+    expect(page).to have_content("Number Of Contestants: 2")
 
     visit "/projects/#{upholstery_tux.id}"
 
-    expext(page).to have_content(upholstery_tux.name)
-    expext(page).to have_content(upholstery_tux.material)
-    expext(page).to have_content(furniture_challenge.theme)
-    expect(page).to have_content("Number of Contestants: 1")
+    expect(page).to have_content(upholstery_tux.name)
+    expect(page).to have_content(upholstery_tux.material)
+    expect(page).to have_content(furniture_challenge.theme)
+    expect(page).to have_content("Number Of Contestants: 1")
   end
 end
