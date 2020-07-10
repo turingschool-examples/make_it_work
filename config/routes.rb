@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get "/projects/:project_id", to: 'projects#show'
 
   get '/contestants', to: 'contenstants#index'
+
+  post "/projects/:project_id/contestants", to: 'contenstants#create'
 end

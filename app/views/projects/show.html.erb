@@ -6,3 +6,21 @@
 
 <p>No of contestants: <%= @project.contestants.count %></p>
 <p>Average age of contestants: <%= @project.contestants.averge_age %> years</p>
+
+<h1>Add contestant</h1>
+
+<%= form_tag"/projects/#{@project.id}/contestants", method: :post do %>
+<%= label_tag :name %>
+<%= text_field_tag :name %>
+
+<%= label_tag :age %>
+<%= number_field_tag :age %>
+
+<%= label_tag :hometown %>
+<%= text_field_tag :hometown %>
+
+<%= label_tag :years_of_experience %>
+<%= number_field_tag :years_of_experience %>
+
+<%= submit_tag "Add Contestant To Project" %>
+<% end %>
