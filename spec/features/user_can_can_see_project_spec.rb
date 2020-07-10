@@ -44,4 +44,16 @@ RSpec.describe 'display project', type: :feature do
     expect(page).to have_content("Recycled Material")
     expect(page).to have_content("No of contestants: 2")
   end
+
+  it 'shows the average number of contestants' do
+    visit "/projects/#{@boardfit.id}"
+    expect(page).to have_content("Boardfit")
+    expect(page).to have_content("Cardboard Boxes")
+    expect(page).to have_content("Recycled Material")
+    expect(page).to have_content("No of contestants: 2")
+    expect(page).to have_content("Average age of contestants: 37.0 years")
+
+    visit "/projects/#{@news_chic.id}"
+    expect(page).to have_content("Average age of contestants: 38.0 years")
+  end
 end
