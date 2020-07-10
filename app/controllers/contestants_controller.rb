@@ -5,7 +5,11 @@ class ContestantsController < ApplicationController
 
   def add
     project = Project.find(params[:project_id])
-    project.add_contestant(params[:contestant_id])
-    redirect_to "/projects/#{project.id}"
+    if project.contestants.include?(Contestant.find(params[:contestant_id]))
+      redirect_to "/projects/#{project.id}"
+    else
+      project.add_contestant(params[:contestant_id])
+      redirect_to "/projects/#{project.id}"
+    end 
   end
 end
