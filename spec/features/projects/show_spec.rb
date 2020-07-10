@@ -51,4 +51,12 @@ RSpec.describe "Project's show page" do
     visit "/contestants"
     expect(page).to have_content(@rug.name)
   end
+
+	# it "it cannot add a contestant to the project if contestant id does not exist" do
+	# 	visit "/projects/#{@rug.id}"
+	# 	fill_in :contestant_id, with: 123
+	# 	click_on "Add Contestant To Project"
+	# 	expect(current_path).to eq("/projects/#{@rug.id}")
+	# 	expect(page).to have_content("Invalid contestant id! Try again!")
+	# end
 end
