@@ -10,6 +10,6 @@ RSpec.describe 'Project show page' do
     expect(current_path).to eq("/projects/#{project.id}")
     expect(page).to have_content("Project Name: #{project.name}")
     expect(page).to have_content("Material: #{project.material}")
-    expect(page).to have_content("Theme: #{project.challenge.theme}")
+    expect(page).to have_content("Challenge Theme: #{project.challenge.theme}")
   end
 end
