@@ -12,26 +12,23 @@ RSpec.describe "Contestant Index Page" do
     @sara              = Contestant.create!(name: 'Sara', age: 26, hometown: 'Salt Lake City', years_of_experience: 4)
     @olivia            = Contestant.create!(name: 'Olivia', age: 25, hometown: 'Centennial', years_of_experience: 7)
 
-    ContestantProject.create!(contestant: @bob, project: @recycled_material)
-    ContestantProject.create!(contestant: @bob, project: @apartment)
     ContestantProject.create!(contestant: @sara,project: @recycled_material)
-    ContestantProject.create!(contestant: @sara,project: @bridal_wear)
-    ContestantProject.create!(contestant: @olivia, project: @recycled_material)
     ContestantProject.create!(contestant: @olivia, project: @bridal_wear)
     ContestantProject.create!(contestant: @olivia, project: @apartment)
   end
 
   it "can show a list of all contestants name and a list of their projects" do
 
-    visit "/contestant"
+    visit "/contestants"
 
-    expect(page).to have_content(@bob.name)
-    expect(page).to have_content(@olivia.name)
     expect(page).to have_content(@sara.name)
+    expect(page).to have_content("Recycled Material")
 
-    expect(page).to have_content(@bob.projects.name)
-    expect(page).to have_content(@olivia.projects.name)
-    expect(page).to have_content(@sara.projects.name)
+    expect(page).to have_content(@olivia.name)
+    expect(page).to have_content("Bridal Wear")
+    expect(page).to have_content("Apartment Furnishings")
+
+
   end
 
 end
