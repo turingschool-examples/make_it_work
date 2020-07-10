@@ -1,0 +1,16 @@
+<h1>Contestants</h1>
+<hr>
+<% @contestants.each do |contestant| %>
+  <section class='contestant' id='contestant-<%= contestant.id %>'>
+    <h3><%= "#{contestant.name}" %></h3>
+    <p>Projects:
+      <br>
+      <% @con_proj.each do |con_proj| %>
+        <% if con_proj.contestant_id == contestant.id %>
+          <%= "#{@projects.find(con_proj.project_id).name}" %>
+          <br>
+        <% end %>
+      <% end %>
+    </p>
+  </section>
+<% end %>
