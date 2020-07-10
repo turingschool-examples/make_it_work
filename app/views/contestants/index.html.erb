@@ -1,0 +1,12 @@
+<h1>List of Contestants</h1>
+
+<% @contestants.each do |contestant| %>
+  <section id="contestant-<%= contestant.id %>">
+      <p><%= contestant.name %></p>
+      <% project_list = ContestantProject.all.select {|cp| cp.contestant_id == contestant.id} %>
+      <% project_list.each do |project| %>
+        <% example = Project.where(id: project.project_id) %>
+        <p><%= example.first.name %></p>
+      <% end %>
+  </section>
+<% end %>
