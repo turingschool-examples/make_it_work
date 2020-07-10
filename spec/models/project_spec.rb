@@ -24,5 +24,16 @@ RSpec.describe Project, type: :model do
 
       expect(project1.count_contestants).to eq(2)
     end
+
+    it ".average_years_exp" do
+      challenge1 = Challenge.create(theme: "Bridal Wear", project_budget: 150)
+      project1 = Project.create(name: "Trash Bag Wedding Dress", material: "trash bags", challenge: challenge1)
+      jay = Contestant.create(name: "Jay McCarroll", age: 30, hometown: "New York City", years_of_experience: 15)
+      kentaro = Contestant.create(name: "Kentaro Kameyama", age: 25, hometown: "Boston", years_of_experience: 5)
+      ContestantProject.create(contestant: jay, project: project1)
+      ContestantProject.create(contestant: kentaro, project: project1)
+
+      expect(project1.average_years_exp).to eq(10)
+    end
   end
 end
