@@ -23,6 +23,6 @@ RSpec.describe "Project show page" do
     ContestantProject.create(contestant: kentaro, project: project1)
 
     visit "/projects/#{project1.id}"
-    expect(page).to have_content("Number Of Contestants: 2")
+    expect(page).to have_content("Number of Contestants: 2")
   end
 end
