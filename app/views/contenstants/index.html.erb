@@ -1,0 +1,9 @@
+
+<% @contestants.each do |contestant| %>
+<div id = "<%= contestant.id %>">
+   <%= contestant.name %>
+   <% contestant.projects.each do |project| %>
+     <%= project.name %>
+   <% end %>
+  </div>
+<% end %>
