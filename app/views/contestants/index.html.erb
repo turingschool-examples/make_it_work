@@ -1,7 +1,7 @@
 <h1>Contestants</h1>
 
 <% @contestants.each do |contestant| %>
-  <p><%= contestant.name %><p>
+  <p><b><%= contestant.name %></b><p>
   <% project_array = @contestant_projects.select do |contestant_project| %>
     <%  contestant_project.contestant_id == contestant.id %>
   <% end %>
