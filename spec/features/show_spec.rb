@@ -15,7 +15,6 @@ RSpec.describe "When I visit a project show page" do
   end
 
   it "I see the project's name and material" do
-    visit "/projects"
     visit "/projects/#{@upholstery_tux.id}"
 
     expect(page).to have_content("Upholstery Tuxedo")
