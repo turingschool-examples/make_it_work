@@ -23,12 +23,31 @@ RSpec.describe "Project show page" do
     kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
     erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
+    ContestantProject.create!(contestant: jay, project: news_chic)
+    ContestantProject.create!(contestant: gretchen, project: news_chic)
+    ContestantProject.create!(contestant: gretchen, project: upholstery_tux)
+    ContestantProject.create!(contestant: kentaro, project: boardfit)
+    ContestantProject.create!(contestant: kentaro, project: upholstery_tux)
+    ContestantProject.create!(contestant: erin, project: boardfit)
+
 
     visit "/projects/#{news_chic.id}"
 
     expect(page).to have_content("News Chic")
     expect(page).to have_content("Material: Newspaper")
     expect(page).to have_content("Challenge Theme: Recycled Material")
+
+    # As a visitor,
+    # When I visit a project's show page
+    # I see a count of the number of contestants on this project
+    #
+    # (e.g.    Litfit
+    #     Material: Lamp Shade
+    #   Challenge Theme: Apartment Furnishings
+    #   Number of Contestants: 3 )
+
+    expect(page).to have_content("Number of Contestants: 2")
+
 
 
   end
