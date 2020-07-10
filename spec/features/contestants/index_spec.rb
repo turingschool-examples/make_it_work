@@ -28,13 +28,5 @@ RSpec.describe "Contestant Index Page" do
     expect(page).to have_content("Bridal Wear")
     expect(page).to have_content("Apartment Furnishings")
 
-
   end
-
 end
-
-# I see a list of names of all the contestants
-# And under each contestants name I see a list of the projects (names) that they've been on
-# ​
-# (e.g.   Kentaro Kameyama
-#         Projects: Litfit, Rug Tuxedo
