@@ -20,7 +20,6 @@ gretchen = Contestant.create(name: "Gretchen Jones", age: 36, hometown: "NYC", y
 kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
 erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
-
 ContestantProject.create(contestant_id: jay.id, project_id: news_chic.id)
 ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
 ContestantProject.create(contestant_id: gretchen.id, project_id: upholstery_tux.id)
