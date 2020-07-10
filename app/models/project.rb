@@ -4,4 +4,11 @@ class Project <ApplicationRecord
 
   has_many :contestant_projects
   has_many :contestants, through: :contestant_projects
+
+  def contestant_experience
+    total_experience = contestants.sum do |contestant|
+      contestant.years_of_experience
+    end.to_f
+    total_experience / contestants.count.to_f
+  end
 end
