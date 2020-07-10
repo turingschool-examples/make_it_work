@@ -22,8 +22,10 @@ RSpec.describe "add contestant to project" do
 
     click_on "Submit Contestant"
     expect(current_path).to eq("/projects/#{news_chic.id}")
-    expect(page).to have_content("Michelle Obama")
-    expect(page).to have_content("Chicago")
     expect(page).to have_content("Number Of Contestants: 2")
+
+    visit "/contestants"
+    expect(page).to have_content("Michelle Obama")
+    expect(page).to have_content(news_chic.name)
   end
 end
