@@ -1,0 +1,15 @@
+<%= form_tag "/projects/#{@project.id}/contestants" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br/>
+  <%= label_tag :age %>
+  <%= text_field_tag :age%>
+  <br/>
+  <%= label_tag :hometown %>
+  <%= text_field_tag :hometown %>
+  <br/>
+  <%= label_tag :years_of_experience %>
+  <%= text_field_tag :years_of_experience %>
+  <br/>
+  <p><%= submit_tag 'Submit' %></p>
+<% end %>
