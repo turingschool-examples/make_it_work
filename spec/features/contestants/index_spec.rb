@@ -22,11 +22,15 @@ RSpec.describe "Contestants Index Page Spec" do
       it "I see the names of all contestants and the names of their projects" do
         visit "/contestants"
 
-        expect(page).to have_content("Kentaro Kameyama")
-        expect(page).to have_content("Projects: Litfit, Rug Tuxedo")
+        expect(page).to have_content(
+          "Kentaro Kameyama\n"+
+          "Projects: Litfit, Rug Tuxedo"
+        )
 
-        expect(page).to have_content("Jay McCarroll")
-        expect(page).to have_content("Projects: Leather Feather")
+        expect(page).to have_content(
+          "Jay McCarroll\n"+
+          "Projects: Leather Feather"
+        )
       end
     end
   end

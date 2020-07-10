@@ -20,11 +20,13 @@ RSpec.describe "Project Show Page Spec" do
       it "I see that project's details" do
         visit "/projects/#{@lit_fit.id}"
 
-        expect(page).to have_content("Litfit")
-        expect(page).to have_content("Material: Lamp Shade")
-        expect(page).to have_content("Challenge Theme: Apartment Furnishings")
-        expect(page).to have_content("Number of Contestants: 3")
-        expect(page).to have_content("Average Contestant Experience: 11.67 years")
+        expect(page).to have_content(
+          "Litfit\n"+
+          "Material: Lamp Shade\n"+
+          "Challenge Theme: Apartment Furnishings\n"+
+          "Number of Contestants: 3\n"+
+          "Average Contestant Experience: 11.67 years"
+        )
       end
 
       it "I can add a contestant to this project" do
