@@ -1,0 +1,13 @@
+<% @contestants.each do |contestant| %>
+  <h3><%= contestant.name %></h3>
+  <% contestant.contestant_projects.each do |cp| %>
+    <% @projects.each do |project| %>
+      <% if cp.project_id == project.id %>
+      <ul>
+        <li><%= project.name %></li>
+      </ul>
+      <% else %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
