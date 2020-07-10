@@ -7,9 +7,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
+    <header>
+      <h1>Project Runway</h1>
+    </header>
+    <br>
+    <nav>
+        <ul>
+          <li><a href="/">Main Menu</a></li>
+          <li>|</li>
+          <li><a href="/contestants">View All Contestants</a></li>
+          <li>|</li>
+          <li><a href="/projects">View All Projects</a></li>
+          <li>|</li>
+        </ul>
+      </nav>
+    </head>
 
   <body>
     <%= yield %>
   </body>
+
 </html>
