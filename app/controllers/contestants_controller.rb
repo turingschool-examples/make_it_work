@@ -1,5 +1,4 @@
 class ContestantsController < ApplicationController
-
   def index
     @contestants = Contestant.all
   end
@@ -14,5 +13,4 @@ class ContestantsController < ApplicationController
   def contestant_params
     params.permit(:name, :age, :hometown, :years_of_experience)
   end
-
 end

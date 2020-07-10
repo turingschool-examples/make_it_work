@@ -1,6 +1,8 @@
 RSpec.describe 'as a visitor' do
   describe 'When I visit a project\'s show page ("/projects/:id")' do
+    
     before :each do
+
       @recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
       @news_chic = @recycled_material_challenge.projects.create(name: "News Chic", material: "Newspaper")
 
@@ -36,7 +38,7 @@ RSpec.describe 'as a visitor' do
     end
 
     it 'I see a form to add a contestant to this project;
-    
+
     When I fill out a field with an existing contestants id and hit "Add Contestant To Project", I\'m taken back to the project\'s show page and I see that the number of contestants has increased by 1;
 
     And when I visit the contestants index page, I see that project listed under that contestant\'s name' do

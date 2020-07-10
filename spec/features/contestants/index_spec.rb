@@ -33,11 +33,11 @@ RSpec.describe 'as a visitor' do
       within('#jay-mccarroll') do
         expect(page).to have_content('News Chic')
       end
+      
       within('#kentaro-kameyama') do
         expect(page).to have_content('Boardfit')
         expect(page).to have_content('Upholstery Tuxedo')
       end
-
     end
   end
 end
