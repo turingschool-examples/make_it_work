@@ -3,3 +3,8 @@
 <p>Material: <%= @project.material %></p>
 
 <p>Theme: <%= @project.challenge.theme %></p>
+
+<p>Number of Contestants:
+
+  <% cp_list = ContestantProject.all.select {|cp| cp.project_id == @project.id}%>
+  <%= cp_list.count %></p>
