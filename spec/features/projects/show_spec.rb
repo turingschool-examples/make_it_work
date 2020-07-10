@@ -46,5 +46,23 @@ RSpec.describe "Projects show page" do
       expect(@recycled_material.average_years_of_experience).to eq(6.67)
       expect(page).to have_content("Average Contestant Experience: 6.67 years")
     end
+
+    it "can add contestant to a project" do
+
+      visit "/projects/#{@bridal_wear.id}"
+
+      fill_in :Add_Contestant_ID, with: 1
+
+      click_button "Add Contestant to Project"
+
+      expect(current_path).to eq("/projects/#{@bridal_wear.id}")
+
+      expect(page).to have_content("Number of Contestants: 3")
+
+      visit "/contestants"
+
+      expect(page).to have_content(@bob.name)
+      expect(@bob.projects).to have_content("Bridal Wear")
+    end
   end
 end
