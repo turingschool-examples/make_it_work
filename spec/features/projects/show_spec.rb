@@ -24,7 +24,7 @@ RSpec.describe "Project Show Page Spec" do
         expect(page).to have_content("Material: Lamp Shade")
         expect(page).to have_content("Challenge Theme: Apartment Furnishings")
         expect(page).to have_content("Number of Contestants: 3")
-        expect(page).to have_content("Average Contestant Experience: 11.66 years")
+        expect(page).to have_content("Average Contestant Experience: 11.67 years")
       end
     end
   end
