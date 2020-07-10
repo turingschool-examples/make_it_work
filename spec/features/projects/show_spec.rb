@@ -11,9 +11,9 @@ RSpec.describe "Project Show Page Spec" do
       it "I see that project's name and material and challenge theme" do
         visit "/projects/#{@lit_fit.id}"
 
-        expect(page).to have_content(@lit_fit.name)
-        expect(page).to have_content("Material: #{@lit_fit.material}")
-        expect(page).to have_content("Challenge Theme: #{@furniture_challenge.theme}")
+        expect(page).to have_content("Litfit")
+        expect(page).to have_content("Material: Lamp Shade")
+        expect(page).to have_content("Challenge Theme: Apartment Furnishings")
       end
     end
   end
