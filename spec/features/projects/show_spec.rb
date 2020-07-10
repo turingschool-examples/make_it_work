@@ -25,6 +25,6 @@ RSpec.describe 'Projects show page' do
     visit "/projects/#{upholstery_tux.id}"
 
     expect(page).to have_content("Total Number of Contestants Participating: 2")
-    expect(page).to have_content("Average Contestant Experience: 10 years")
+    expect(page).to have_content("Average Contestant Experience: 10.0 years")
   end
 end
