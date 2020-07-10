@@ -34,19 +34,22 @@ RSpec.describe 'contestents index page' do
     expect(page).to have_content(@erin.name)
 
     within("#contestant-#{@jay.id}") do
-      expect(page).to have_content("Projects: News Chic Upholstery Tuxedo")
+      expect(page).to have_content("News Chic")
+      expect(page).to have_content("Upholstery Tuxedo")
     end
 
     within("#contestant-#{@gretchen.id}") do
-      expect(page).to have_content("Projects: News Chic Upholstery Tuxedo")
+      expect(page).to have_content("News Chic")
+      expect(page).to have_content("Upholstery Tuxedo")
     end
 
     within("#contestant-#{@kentaro.id}") do
-      expect(page).to have_content("Projects: Upholstery Tuxedo Boardfit")
+      expect(page).to have_content("Upholstery Tuxedo")
+      expect(page).to have_content("Boardfit")
     end
 
     within("#contestant-#{@erin.id}") do
-      expect(page).to have_content("Projects: Boardfit")
+      expect(page).to have_content("Boardfit")
     end
   end
 end
