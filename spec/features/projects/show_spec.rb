@@ -14,14 +14,4 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("Material: #{project_1.material}")
     end
   end
-
-
-
-
-As a visitor,
-When I visit a project's show page ("/projects/:id"),
-I see that project's name and material
-And I also see the theme of the challenge that this project belongs to.
-(e.g.    Litfit
-    Material: Lamp Shade
-  Challenge Theme: Apartment Furnishings)
+end
