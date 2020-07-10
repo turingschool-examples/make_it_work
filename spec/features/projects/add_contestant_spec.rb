@@ -29,7 +29,8 @@ RSpec.describe 'projects show page' do
     visit "/contestants"
 
     within("#contestant-#{@kentaro.id}") do
-      expect(page).to have_content("Projects: Upholstery Tuxedo Litfit")
+      expect(page).to have_content("Upholstery Tuxedo")
+      expect(page).to have_content("Litfit")
     end
   end
 end
