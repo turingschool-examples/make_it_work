@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   end
   
   def show
+    @challenge = Challenge.find(params[:id])
     @project = Project.find(params[:id])
   end
 
