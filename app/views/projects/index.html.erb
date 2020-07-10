@@ -1,0 +1,9 @@
+<h1>Check Out All The Projects</h1>
+
+<% @projects.each do |projects| %>
+<section class="project-<%= project.id %>">
+  <%= project.name %>
+  <%= project.material %>
+  <% end %>
+</section>
+<% end %>
