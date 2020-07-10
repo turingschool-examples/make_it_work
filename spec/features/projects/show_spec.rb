@@ -30,6 +30,20 @@ RSpec.describe "project show page" do
     #   Challenge Theme: Apartment Furnishings
     #   Number of Contestants: 3 )
   end
+  it "shows average years of experience" do
+    challenge = Challenge.create!(theme: "Apartment Furnishings", project_budget: 1000)
+    project = Project.create!(name: "Litfit", material: "Lamp Shade", challenge_id: challenge.id)
+    ken = Contestant.create!(name: "Kentaro Kameyama", age: 30, hometown: "Denver", years_of_experience: 10)
+    jay = Contestant.create!(name: "Jay McCarroll", age: 25, hometown: "Denver", years_of_experience: 5)
+    ContestantProject.create!(contestant: ken, project: project)
+    ContestantProject.create!(contestant: ken, project: project)
+    ContestantProject.create!(contestant: jay, project: project)
+    ContestantProject.create!(contestant: jay, project: project)
+
+    visit "projects/#{project.id}"
+
+    expect(page).to have_content("Average Contestant Experience: 7.5 years")
+  end
 end
 
 # When I visit a project's show page ("/projects/:id"),
