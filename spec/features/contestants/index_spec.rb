@@ -26,12 +26,12 @@ RSpec.describe 'Contestants index page' do
     visit '/contestants'
 
     within("#contestant-#{jay.id}") do
-      expect(page).to have_content("Contestant: Jay McCarrol")
+      expect(page).to have_content("Name: Jay McCarrol")
       expect(page).to have_content("Projects: News Chic")
     end
 
     within("#contestant-#{gretchen.id}") do
-      expect(page).to have_content("Contestant: Gretchen Jones")
+      expect(page).to have_content("Name: Gretchen Jones")
       expect(page).to have_content("Projects: News Chic, Upholstery Tuxedo")
     end
   end
