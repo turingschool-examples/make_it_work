@@ -26,7 +26,7 @@ RSpec.describe "Contestants Index Page Spec" do
         expect(page).to have_content("Projects: Litfit, Rug Tuxedo")
 
         expect(page).to have_content("Jay McCarroll")
-        expect(page).to have_content("Projects: LeatherFeather")
+        expect(page).to have_content("Projects: Leather Feather")
       end
     end
   end
