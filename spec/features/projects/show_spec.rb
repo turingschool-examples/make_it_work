@@ -16,6 +16,12 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("Theme: #{@recycled_material_challenge.theme}")
       expect(page).to have_content("Name: #{@project_1.name}")
       expect(page).to have_content("Material: #{@project_1.material}")
+    end
+
+    it 'I also displays number of contestants' do
+
+      visit "/projects/#{@project_1.id}"
+
       expect(page).to have_content("Number of Contestants: 2")
     end
   end
