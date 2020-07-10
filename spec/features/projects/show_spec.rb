@@ -40,15 +40,15 @@ RSpec.describe "Project's show page" do
   it "should display the average years of experience for the contestant that worked for that project" do
     visit "/projects/#{@litfit.id}"
     expect(page).to have_content("Average Contestant Experience: 10.0 years")
+  end
 
+  it "should display a form to add an existing contestant to the project" do
+    visit "/projects/#{@rug.id}"
+    fill_in :contestant_id, with: @contestant_2.id
+    click_on "Add Contestant To Project"
+    expect(current_path).to eq("/projects/#{@rug.id}")
+    expect(page).to have_content("Number of contestants: 2")
+    visit "/contestants"
+    expect(page).to have_content(@rug.name)
   end
 end
-
-# As a visitor,
-# When I visit a project's show page
-# I see the average years of experience for the contestants that worked on that project
-# (e.g.    Litfit
-#     Material: Lamp Shade
-#   Challenge Theme: Apartment Furnishings
-#   Number of Contestants: 3
-#   Average Contestant Experience: 10.25 years)
