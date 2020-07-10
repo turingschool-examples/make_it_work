@@ -43,6 +43,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'json'
+  gem 'nyan-cat-formatter'
 end
 
 group :development do
