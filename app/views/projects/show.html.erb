@@ -1,5 +1,6 @@
 <h1><%= @project.name %></h1>
 <h2><%= "Contestants on this Project :#{@project.contestants.count}" %></h2>
+<h3><%= "Average Years of Experience: #{@project.contestants.avg_years}" %></h3>
 
 <p><%= @project.material %></p>
 <p><%= @project.challenge.theme %></p>
