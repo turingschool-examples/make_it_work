@@ -7,4 +7,9 @@ class Project < ApplicationRecord
   def total_contestants
     contestants.count
   end
+
+  def average_years_of_experience
+    return 0 if contestants.average(:years_of_experience).nil?
+    contestants.average(:years_of_experience)
+  end
 end
