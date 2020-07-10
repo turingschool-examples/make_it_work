@@ -1,8 +1,8 @@
-<%= @project.name %>
-<%= "Material: #{@project.material}" %>
-<%= "Challenge Theme: #{@project.challenge.theme}" %>
-<%= "Number of Contestants: #{@project.contestants.size}" %>
-<%= "Average Contestant Experience: #{@project.average_contestant_experience} years" %>
+<%= tag.h1 @project.name %>
+<%= tag.h2 "Material: #{@project.material}" %>
+<%= tag.h2 "Challenge Theme: #{@project.challenge.theme}" %>
+<%= tag.h2 "Number of Contestants: #{@project.contestants.size}" %>
+<%= tag.h2 "Average Contestant Experience: #{@project.average_contestant_experience} years" %>
 
 <%= form_tag "/projects/#{@project.id}", method: :post do %>
   <%= label_tag :add_contestant_id %>
