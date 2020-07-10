@@ -1,0 +1,16 @@
+<div class="contestants-index">
+  <h1>All Contestants</h1>
+
+  <section class="contestant-list">
+    <div class="list-of-contestants">
+      <h2> Contestants:</h2>
+      <% @contestants.each do |contestant| %>
+        <div id="contestant-<%= contestant.id %>">
+          <p>Name: <%= contestant.name %></p>
+          <p>Projects: <%= contestant.projects.map { |project| project.name }.join(', ') %></p>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </section>
+</div>
