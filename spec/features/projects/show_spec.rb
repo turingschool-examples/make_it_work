@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "When I visit a project's show page" do
-  it "I see the project's name and material, it challenge theme, and its number of contestants" do
+  it "I see the project's name and material, it challenge theme, its number of contestants, and contestants' avg yrs experience" do
     furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
     upholstery_tux = furniture_challenge.projects.create(name: "Upholstery Tuxedo", material: "Couch")
 
@@ -17,5 +17,6 @@ RSpec.describe "When I visit a project's show page" do
     expect(page).to have_content("Material: #{upholstery_tux.material}")
     expect(page).to have_content("Challenge Theme: #{upholstery_tux.challenge.theme}")
     expect(page).to have_content("Number of Contestants: 2")
+    expect(page).to have_content("Average Contestant Experience: 12.5")
   end
 end
