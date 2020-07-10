@@ -3,3 +3,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 end
+
+# class ProjectsController < ApplicationController
+#   def show
+#     @project = Project.find(params[:id])
+#     @challenge = @project.challenge
+#   end
+# end
