@@ -1,0 +1,8 @@
+<h1>Challenges</h1>
+
+<section class="challenges">
+  <% @challenges.each do |challenge| %>
+  <p><%= challenge.theme %></p>
+  <p><%= challenge.project_budget %></p>
+  <% end %>
+</section>
