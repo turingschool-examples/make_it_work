@@ -38,7 +38,5 @@ RSpec.describe '', type: :feature do
       expect(page).to have_content("Upholstery Tuxedo")
       expect(page).to have_content("Boardfit")
     end
-
-
   end
 end
