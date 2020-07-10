@@ -1,0 +1,4 @@
+<% @contestants.each do |contestant| %>
+  <%= tag.h2 contestant.name %>
+  <%= tag.h3 "Projects: #{contestant.projects.map(&:name).join(", ")}" %>
+<% end %>
