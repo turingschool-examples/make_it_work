@@ -16,11 +16,11 @@ RSpec.describe 'projects show page' do
     @kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
     @erin = Contestant.create(name: "Erin Robertson", age: 44, hometown: "Denver", years_of_experience: 15)
 
-    ContestantProject.create(contestant_id: @jay.id, project_id: @recycled_material_challenge.id)
+    ContestantProject.create(contestant_id: @jay.id, project_id: @news_chic.id)
     ContestantProject.create(contestant_id: @jay.id, project_id: @upholstery_tux.id)
     ContestantProject.create(contestant_id: @gretchen.id, project_id: @news_chic.id)
-    ContestantProject.create(contestant_id: @gretchen.id, project_id: @recycled_material_challenge.id)
-    ContestantProject.create(contestant_id: @kentaro.id, project_id: @recycled_material_challenge.id)
+    ContestantProject.create(contestant_id: @gretchen.id, project_id: @upholstery_tux.id)
+    ContestantProject.create(contestant_id: @kentaro.id, project_id: @upholstery_tux.id)
     ContestantProject.create(contestant_id: @kentaro.id, project_id: @boardfit.id)
     ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
   end
@@ -31,6 +31,6 @@ RSpec.describe 'projects show page' do
     expect(page).to have_content(@news_chic.name)
     expect(page).to have_content("Material: #{@news_chic.material}")
     expect(page).to have_content("Challenge Theme: Recycled Material")
-    expect(page).to have_content("Number of Contestants: 3")
+    expect(page).to have_content("Number of Contestants: 2")
   end
 end
