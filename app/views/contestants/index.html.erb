@@ -1,9 +1,11 @@
 <% @contestants.each do |contestant| %>
-  <h3><%= contestant.name %></h3>
-  Projects:
-  <% contestant.projects.each do |project| %>
-    <ul>
-      <li><%= project.name %></li>
-    </ul>
-  <% end %>
+  <div id='<%= contestant.name.downcase.gsub(" ", "-") %>'>
+    <h3><%= contestant.name %></h3>
+    Projects:
+    <% contestant.projects.each do |project| %>
+      <ul>
+        <li><%= project.name %></li>
+      </ul>
+    <% end %>
+  </div>
 <% end %>

@@ -29,10 +29,15 @@ RSpec.describe 'as a visitor' do
     it 'and under each contestants name I see a list of the projects (names) that they\'ve been on' do
 
       visit "/contestants"
-      expect(page).to have_content('News Chic')
-      expect(page).to have_content('Boardfit')
-      expect(page).to have_content('Upholstery Tuxedo')
-    end
 
+      within('#jay-mccarroll') do
+        expect(page).to have_content('News Chic')
+      end
+      within('#kentaro-kameyama') do
+        expect(page).to have_content('Boardfit')
+        expect(page).to have_content('Upholstery Tuxedo')
+      end
+
+    end
   end
 end
